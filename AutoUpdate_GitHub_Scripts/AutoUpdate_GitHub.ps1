@@ -6,6 +6,7 @@ $gitDir = "$dir\"		#CHANGE THIS IF YOUR LOCAL CLONE PATH IS NOT THE SAME AS THIS
 
 ##--CHANGE DIRECTORY TO THE CLONE PATH--##
 cd $gitDir
+cd ..
 
 
 ##--CREATE COMMIT MESSAGE--##
@@ -14,6 +15,7 @@ $commitMsg = (get-date).ToString('M/d/y -- H:mm:ss') + "  Update"
 
 ##--CHECK IF ANY UPDATES ARE NEEDED--##
 [string]$status = git status
+write-host$status
 if ($status -NotLike "*nothing to commit*"){
 
 	##--UPDATE REPOSITORY--##

@@ -15,7 +15,7 @@ $commitMsg = (get-date).ToString('M/d/y -- H:mm:ss') + "  Update"
 
 ##--CHECK IF ANY UPDATES ARE NEEDED--##
 [string]$status = git status
-write-host$status
+write-host $status
 if ($status -NotLike "*nothing to commit*"){
 
 	##--UPDATE REPOSITORY--##
@@ -33,4 +33,4 @@ cd ..
 Start-Sleep -s 15
 
 ##--ENSURE THE POWERSHELL SCRIPT PROCESS ENDS--##
-Stop-Process $pid
+# Stop-Process $pid
